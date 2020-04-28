@@ -10,6 +10,7 @@ test_that("cloning repositories works", {
   expect_equal(info$shorthand, "master")
   repo2 <- git_open(path)
   info2 <- git_info(repo2)
+  cat("PATH: %s, %s\n", info$path, info2$path)
   expect_equal(info, info2)
   expect_is(git_ls(repo), 'data.frame')
   expect_is(git_log(repo = repo), 'data.frame')
